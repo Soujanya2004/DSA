@@ -1,15 +1,15 @@
 public class mergedll {
     public static class Node{
-        int data;
+        char data;
         Node next;
-        public Node(int data){
+        public Node(char data){
             this.data=data;
             this.next=null;
         }
     }
     public static Node head;
     public static Node tail;
-    public static void addFirst(int data){
+    public static void addFirst(char data){
        Node newnode=new Node(data);
        if(head==null){
         head=newnode;
@@ -35,7 +35,7 @@ public class mergedll {
     //step3 sort both halves
     //step 4 merge both halves
     public static Node merge(Node left, Node right){
-        Node mergedll=new Node(-1); //dummy node 
+        Node mergedll=new Node('a'); //dummy node 
         Node temp=mergedll; //for sorted head tracking
         Node lefthead=left;
         Node righthead=right;
@@ -77,11 +77,11 @@ public class mergedll {
 
     }
     public static void main (String[] args) {
-        addFirst(5);
-        addFirst(3);
-        addFirst(8);
-        addFirst(1);
-        addFirst(4);
+        addFirst('s');
+        addFirst('o');
+        addFirst('n');
+        addFirst('u');
+        addFirst('c');
         //4-1-8-3-5
         Node sortedHead = mergesort(head);
         // Print sorted linked list
