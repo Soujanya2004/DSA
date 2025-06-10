@@ -1,6 +1,7 @@
 public class nqueens {
     //to print the board
     public static void printsol(char board[][]){
+        
         for(int i=0;i<board.length;i++){
             for(int j=0; j<board.length;j++){
                 System.out.print(board[i][j]+" ");
@@ -8,6 +9,7 @@ public class nqueens {
             System.out.println();
         }
         System.out.println();
+       
     }
     //to check if it is safe to place q
     public static boolean issafe(char board[][],int row,int col){
@@ -36,6 +38,7 @@ public class nqueens {
       //base case
       if(row==board.length){
         printsol(board);
+        count++;
         return;
       }
       //placing q
@@ -47,10 +50,11 @@ public class nqueens {
             board[row][i]='X';
         }       
    }   
-
+  
  }
+ static int count=0;
     public static void main(String args[]){
-        int n=4;
+        int n=5;
         char board[][]=new char[n][n];
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
@@ -58,7 +62,7 @@ public class nqueens {
             }
         }
         placeq(board,0);
-        
+        System.out.println(count); //to print number of solutions possible
 
     }
 }
