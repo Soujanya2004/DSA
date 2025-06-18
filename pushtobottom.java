@@ -18,5 +18,6 @@ public class pushtobottom {
         while(!stack.isEmpty()){
             System.out.println(stack.pop());
         }
+        //or system.out.println(stack); //to print the stack directly
     }
 }
