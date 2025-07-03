@@ -19,11 +19,11 @@ public class fracKnapsack {
             if(capacity==0){
                 break;
             }
-            if(capacity<ratio[j][2]){
+            if(capacity<ratio[j][2]){ // if capacity is less than the weight of the item
                 total = total + (int)(capacity * ratio[j][1]);
                 break;
             }
-            else{
+            else{ // take the whole item
                  total=total+ratio[j][3].intValue();
                  capacity=capacity-ratio[j][2].intValue();
 
