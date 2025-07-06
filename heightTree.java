@@ -9,6 +9,19 @@ public class heightTree{
             left=right=null;
         }
     }
+
+    //number of leaves in the longest path
+    public static int diameter(Node root){
+        if(root==null){
+            return 0;
+        }
+        int ld=diameter(root.left);
+        int rd=diameter(root.right);
+        int lh=height(root.left);
+        int rh=height(root.right);
+        int selfdiameter = ld + rd + 1;
+        return Math.max(selfdiameter, Math.max(ld, rd)); 
+    }
     
     public static int height(Node root){
         if(root==null){
@@ -37,5 +50,6 @@ public class heightTree{
 
         System.out.println("Height of the tree: " + height(root));
         System.out.println("Count of nodes in the tree: " + count(root));
+        System.out.println("Diameter of the tree: " + diameter(root));
     }
 }
